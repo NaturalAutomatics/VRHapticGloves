@@ -10,6 +10,9 @@
 
 #include "AdvancedConfig.h"
 
+//Screen config:
+#define INDICATION COMM_SERIAL
+
 //This is the configuration file, main structure in _main.ino
 //CONFIGURATION SETTINGS:
 #define COMMUNICATION COMM_SERIAL //Which communication protocol to use
