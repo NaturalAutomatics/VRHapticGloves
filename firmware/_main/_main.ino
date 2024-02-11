@@ -1,7 +1,7 @@
 #define ALWAYS_CALIBRATING CALIBRATION_LOOPS == -1
 
 ICommunication* comm;
-IIndication* indicator;
+IIndication* screen;
 int loops = 0;
 void setup() {
   #if COMMUNICATION == COMM_SERIAL
@@ -14,12 +14,12 @@ void setup() {
   setupInputs();
 
   //For Screen Indication
-  #if INDICATION == COMM_SERIAL
-    comm = new SerialCommunication();
-  #elif COMMUNICATION == COMM_BTSERIAL
-    comm = new BTSerialCommunication();
+  #if INDICATION == SCREEN
+    screen = new IndicatorScreen;
+  // #elif COMMUNICATION == COMM_BTSERIAL
+  //   comm = new BTSerialCommunication();
   #endif  
-  comm->start();
+  screen->init();
 
   setupInputs();
 
